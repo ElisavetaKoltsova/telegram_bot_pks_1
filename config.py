@@ -1,7 +1,7 @@
 import os
 
 # Railway Variables
-BOT_TOKEN = os.getenv("8363903338:AAEiQ98m3F7LtFxK2YTJZiqPP9_xFHFQkaI")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 DB_NAME = os.getenv("DB_NAME", "railway")
 DB_USER = os.getenv("DB_USER", "postgres")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "vUSQNQBEGyuVWQRKkfVbkKfpSGyMyjEr")
