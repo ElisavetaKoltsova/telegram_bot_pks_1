@@ -1,20 +1,16 @@
-import psycopg2
-from config import *
-
-def get_connection():
-    return psycopg2.connect(
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        host=DB_HOST,
-        port=DB_PORT
-    )
+import psycopg
 
 def get_site_elements():
-    conn = get_connection()
+    conn = psycopg.connect(
+        dbname="pks_1",
+        user="postgres",
+        password="997299",
+        host=os.getenv("DB_HOST"),
+        port="5432"
+    )
     cur = conn.cursor()
-    cur.execute("SELECT name, complexity_id FROM site_elements;")
-    rows = cur.fetchall()
+    cur.execute("SELECT * FROM site_elements;")
+    data = cur.fetchall()
     cur.close()
     conn.close()
-    return rows
+    return data
